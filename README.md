@@ -1,7 +1,8 @@
 # NChat
-
+```
 Cli chat service, support multi-room chat.
 命令行聊天服务, 支持多房间交流.
+```
 
 ---
 
@@ -10,7 +11,7 @@ Cli chat service, support multi-room chat.
 ``` bash
 git clone https://github.com/naucye/NChat.git
 
-cd ./nChat
+cd ./NChat
 
 // 启动服务端
 node server.js
@@ -19,7 +20,8 @@ node server.js
 node client.js
 ```
 ## client.js使用
-使用: nchat [操作符]
+```
+使用: node client.js [操作符]
 
 操作符:
   -n      添加用户名
@@ -27,7 +29,7 @@ node client.js
   -c      向指定房间号发送信息
   -v      获取版本号
   --help  获取帮助信息
-
+```
 
 ## 一切开发旨在学习，请勿用于非法用途
 
