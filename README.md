@@ -1,6 +1,8 @@
 # NChat
+
 Cli chat service, support multi-room chat.
 命令行聊天服务, 支持多房间交流.
+
 ---
 
 ## 使用方法
