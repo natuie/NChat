@@ -59,8 +59,8 @@ node client.js
 <details>
   <summary>目前已开发功能</summary>
 
-1.多用户聊天
-2.支持创建房间
+1.  多用户聊天
+2.  支持创建房间
 
 </details>
 
