@@ -17,7 +17,7 @@ cd ./NChat
 node server.js
 
 //启动客户端
-node client.js
+node client.js -n 昵称 -id 房间号
 ```
 ## client.js使用
 ```
