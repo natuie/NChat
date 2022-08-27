@@ -1,0 +1,1 @@
+node /usr/share/nchat/client.js $@

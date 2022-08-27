@@ -1,0 +1,20 @@
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>测试php+js调用cmd命令行</title>
+    </head>
+     
+     
+    <body>
+     <a href="#" onclick="win_run(); return false;">调用cmd</a>
+    </body>
+     
+    <script type="text/javascript">
+    function win_run(){	
+    var cmd=new ActiveXObject("WScript.Shell");
+    cmd.run("cmd.exe /k ping 127.0.0.1 && cd test && activate py35 && python pr.py > result.txt");//百度搜索cmd多命令行一起写
+    cmd=null;
+     window.setTimeout('window.close();',3000);
+    }
+    </script>
+    </html>
