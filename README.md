@@ -16,11 +16,6 @@ cd ./NChat
 
 sh install.sh
 
-<<<<<<< HEAD
-=======
-//启动客户端
-node client.js -n 昵称 -id 房间号
->>>>>>> 7edbfdb359bacff428cef33773b30bdbe00eb660
 ```
 
 ## nchat-server命令的使用
