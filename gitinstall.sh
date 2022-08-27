@@ -1,3 +1,4 @@
+#!/usr/bin/sh
 echo "Installing ..."
 sudo mkdir -vp /usr/share/nchat
 echo "CLoneing project ..."

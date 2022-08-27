@@ -1,3 +1,4 @@
+#!/usr/bin/sh
 if ! [ -f ./bin/nchat ];then
     echo "Error: wrong location!"
     exit 0
