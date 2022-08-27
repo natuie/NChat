@@ -10,7 +10,7 @@ Cli chat service, support multi-room chat.
 使用该项目，还需要安装node环境！
 
 ``` bash
-git clone https://github.com/naucye/NChat.git
+git clone https://github.com/naucye/NChat.git NChat
 
 cd ./NChat
 
