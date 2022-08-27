@@ -116,4 +116,3 @@ socket.on('data', function (data) {
 socket.on('error', function (error) {
     console.log('Server error: ' + error);
 })
-了
