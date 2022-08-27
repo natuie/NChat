@@ -1,1 +1,1 @@
-node /usr/share/nchat/server.js $@
+node /usr/share/NChat/server.js $@

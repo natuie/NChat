@@ -15,14 +15,6 @@ git clone https://github.com/naucye/NChat.git
 cd ./NChat
 
 sh install.sh
-  --url    目标 NChat 服务器 url
-  --port   目标 NChat 服务器端口
-  -n       添加当前用户的用户名
-  -id      要添加的房间号，如果不存在则创建
-  -p       加入房间时需要提供的密码，或者创建房间时给房间设置密码
-  -f       向当前房间的所有用户发送文件
-  -v       获取包信息
-  --help   获取帮助信息
 ```
 
 ## nchat-server命令的使用
