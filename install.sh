@@ -4,7 +4,7 @@ if ! [ -f ./bin/nchat ];then
     exit 0
 fi
 echo "Installing ..."
-npm Install moment --save
+npm install moment --save
 echo "Copying file ..."
 sudo mkdir -vp /usr/share/NChat
 sudo cp -vr . /usr/share/NChat
