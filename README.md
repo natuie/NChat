@@ -6,83 +6,81 @@ Cli chat service, support multi-room chat.
 
 ---
 
-## 安装
-使用该项目，还需要安装node环境！
+## 下载与安装
 
 ``` bash
-git clone https://github.com/naucye/NChat.git
+git clone https://github.com/natuie/NChat.git
 
-cd ./NChat
+cd NChat
 
-sh install.sh
+npm install
 ```
 
-### nchat-server 命令的使用
 
-nchat-server 为nchat服务端，开启后，客户端才可连接。默认端口为2428。
-
-```
-// 启动服务端
-nchat-server
+### 命令的使用
+nchat可以在任何一台设备通过连接服务端即可通信。
 
 ```
-### nchat 命令的使用
-
-nchat 为客户端，可以在任何一台设备通过连接服务端即可通信。
-
-```
-使用: nchat [操作符]
+使用: npm run nchat [操作符]
 
 操作符:
+  --server 启动 NChat 服务器
   --url    目标 NChat 服务器 url
   --port   目标 NChat 服务器端口
   -n       为当前用户添加用户名
   -id      要添加的房间号，如果不存在则创建
   -p       加入房间时需要提供的密码，创建房间时设置密码
   -f       向当前房间的所有用户发送文件
+  --encryption <on|off>     启用或禁用消息加密（默认: on）
+  --max-reconnect <number>  最大重连尝试次数（默认: 10）
+  --reconnect-interval <ms> 重连间隔时间（默认: 3000ms）
+  --no-auto-reconnect      禁用自动重连
+  --log-level <level>      设置日志级别（可选: debug|info|warn|error，默认: info）
   -v       获取软件包信息
   --help   获取帮助信息
 
-实例: nchat --url 127.0.0.1 --port 2428 -n name -id 2428 -p nchat
-# 在本地上--url与--port可省略，这些参数也可以都省略
+实例: 
+# 基本用法
+npm run nchat --url 127.0.0.1 --port 2428 -n name -id 2428 -p nchat
+
+# 在本地上--url与--port可省略
+npm run nchat -n name -id 2428
+
+# 禁用加密并设置重连参数
+npm run nchat -n name -id 2428 --encryption off --max-reconnect 5 --reconnect-interval 5000
+
+# 禁用自动重连并设置日志级别
+npm run nchat -n name -id 2428 --no-auto-reconnect --log-level debug
+
+# 启动NChat服务器
+npm run serve
+
+# 懒人专用，直接什么参数不带，全默认，但是部署服务器必须写URL
+npm run nchat
 ```
 
-## 编译
-针对编译给没有node环境的
-```
-npm run build 
-# 这样就能编译出当前平台Windows,Mac,Linux 3大平台二进制包。如果想交叉编译，可以自行改脚本，加-t参数来实现。
-```
+### NChat TUI 快捷键
+首先需要按 `ESC` 才能按下面的快捷键。
+- Ctrl + A : 切换聊天模式和命令模式。
+- Ctrl + Enter : 换行
+- Tab : 切换焦点（在聊天框、用户列表和输入框之间）。
+- Ctrl + C : 退出程序。
 
-## 卸载
-```
-sh uninstall.sh
-```
+切换到对应窗口按上下按键滚动
 
-## 一切开发旨在学习，请勿用于非法用途
+### NChat TUI 指令
+需要在命令模式才能使用。
+- /help : 显示可用命令的帮助信息。
+- /send <文件路径> : 发送文件到当前房间的所有用户。
+- /list : 显示可接收的文件列表。
+- /receive <文件编号> : 接收指定编号的文件。
+- /mode : 切换聊天模式和命令模式。
+- /encrypt <on|off> : 开启或关闭端到端加密。
+- /kill <用户ID> : 踢出指定用户（仅房主可用）。
+- /exit : 退出程序
 
--   本项目保证永久开源，欢迎提交 PR，但是请不要提交用于非法用途的功能。
--   如果某功能被大量运用于非法用途或严重侵害插件使用者权益，那么该功能将会被移除。
--   本模块完全免费开源, 近期发现模块倒卖现象严重,请勿上当
--   鉴于项目的特殊性，开发团队可能在任何时间**停止更新**或**删除项目**
 
-### 许可证
-
--   [GPL 3.0]([https://github.com/naucye/NChat/blob/main/LICENSE](https://github.com/naucye/NChat/blob/main/LICENSE))
-
-```
-版权所有©2022 naucye <naucye@naucy.top, naucye@qq.com, naucye@163.com>
-
-允许在遵守 GPL 3.0 协议的同时，复制和分发此协议文档的逐字记录副本，且允许对其进行更改，但必须保留其版权信息与原作者。如果您提出申请特殊权限，协议作者可在其口 头或书面授予任何人任何但不包括以盈利为目的的使用本协议的权利。
-
-请务必仔细阅读和理解通用许可协议书中规定的所有权利和限制。在使用前，您需要仔细阅读并决定接受或不接受本协议的条款。除非或直至您接受本协议的条款，否则本作品及其相关副本、相关程序代码或相关资源不得在您的任何终端上下载、安装或使用。
-
-您一旦下载、使用本作品及其相关副本、相关程序代码或相关资源，即表示您同意接受本协议各项条款的约束。如您不同意本协议中的条款，您则应当立即删除本作品、附属资源及其相关源代码。
-
-本作品权利只许可使用，而不出售。
-```
-
-## 功能介绍
+### 功能介绍
 
 <details>
   <summary>目前已开发功能</summary>
@@ -94,13 +92,23 @@ sh uninstall.sh
 
 1.1.2(2022-8-27)
 
-3.  增加通过参数指定URL:PORT来访问服务端
-4.  增加加入房间密码
-5.  文件传输（目前只支持小文件，普通的文本）
-6.  增加快速安装脚本，以及添加2个二进制文件
+1.  增加通过参数指定URL:PORT来访问服务端
+2.  增加加入房间密码
 
+2.3.22(2024-5-26)
+1.  文件传输（目前只支持小文件，普通的文本）
+2.  增加快速安装脚本，以及添加2个二进制文件
+
+2.0.1-alpha(2025-3-23)
+1.  增加通信加密
+2.  增加自动重连
+3.  增加TUI界面
+4. 重写文件传输，但是只能传输小文件，不然json会炸
+5. 增加了命令行模式
+6. 支持房主踢人功能
+7. 美化输出
+8. 取消了单一客户端与服务端文件来执行，改为通过一个主文件来选择执行
+9. 修复了客户端断开链接，服务器也会挂问题
+10. 修复了已知BUG
+注意：这个版本并不完善，可能有bug，很多东西我都还没搞，但是可以使用，下次再更新，或许几年后。
 </details>
-
-## 关于
-
-我们会更快更新项目，希望对你有所帮助。
